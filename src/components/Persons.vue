@@ -1,15 +1,27 @@
 <template>
   <div v-if="persons">
-    <div class="center" v-for="person in persons" :key="person.email">
-      <div class="profile-picture">
-        <img :src="person.image" />
-      </div>
-      <div class="person">
-        <strong>{{ person.firstname }}</strong>
-      </div>
-      <div class="person">{{ person.lastname }}</div>
-      <div class="person">({{ person.email }})</div>
-    </div>
+    <b-container
+      class="bv-example-row border border-primary"
+      v-for="person in persons"
+      :key="person.email"
+    >
+      <b-row>
+        <b-col cols="auto"><img :src="person.image"/></b-col>
+        <b-col>
+          <b-row>
+            <b-col
+              ><strong>{{ person.firstname }}</strong></b-col
+            >
+          </b-row>
+          <b-row>
+            <b-col>{{ person.lastname }}</b-col>
+          </b-row>
+          <b-row>
+            <b-col>({{ person.email }})</b-col>
+          </b-row>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
